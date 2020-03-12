@@ -13,7 +13,6 @@ const req = function(write) {
     if (error) {
       console.log('error: ', error);
     } else {
-      if ()
       if (fs.existsSync(input[1])) {
         ifOverwrite(() => {
           write(body.body, input[1]);
@@ -29,8 +28,6 @@ const req = function(write) {
 };
 
 const ifOverwrite = (callback) => {
-  
-
   rl.question('File already exists, do you want to overwrite the file? ', (answer) => {
     (answer === 'y' || answer === 'Y') ? callback() : process.exit();
   });
@@ -48,9 +45,5 @@ const writeToFile = function(data, output) {
   });
     
 };
-  
-
-  
-
 
 req(writeToFile);
